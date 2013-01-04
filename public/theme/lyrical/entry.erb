@@ -1,0 +1,147 @@
+  <hr />
+
+  <!-- Blog starts -->
+            <div class="blog">
+               <div class="row">
+                  <div class="span12">
+                     
+                     <!-- Blog Posts -->
+                     <div class="row">
+                        <div class="span8">
+                           <div class="posts">
+                           
+                              <!-- Each posts should be enclosed inside "entry" class" -->
+                              <!-- Post one -->
+                              <div class="entry">
+                                 <h2><%= @entry.title %></h2>
+                                 
+                                 <!-- Meta details -->
+                                 <div class="meta">
+                                    <i class="icon-calendar"></i> <%= @entry.created_at.strftime("%Y/%m/%d %H:%M:%S") %> <i class="icon-user"></i> Admin <i class="icon-folder-open"></i> <a href="#">General</a> <span class="pull-right"><i class="icon-comment"></i> <a href="#"><%= link_to "#{t('comments')}(#{@entry.comments.size})", url("#{@entry.link}#comment_wrapper")%></a></span>
+                                 </div>
+                                 
+                                 <%= @entry.body %>
+
+                              </div>
+                              
+                              <div class="well">
+                                 <!-- Social media icons -->
+                                 <div class="social">
+                                    <h6>Sharing is Sexy: </h6>
+                                    <a href="#"><i class="icon-facebook facebook"></i></a>
+                                    <a href="#"><i class="icon-twitter twitter"></i></a>
+                                    <a href="#"><i class="icon-linkedin linkedin"></i></a>
+                                    <a href="#"><i class="icon-pinterest pinterest"></i></a>
+                                    <a href="#"><i class="icon-google-plus google-plus"></i></a>
+                                 </div>
+                              </div>     
+
+                               <hr />
+
+                               <!-- Comment section -->
+                              
+                              <% if @entry.comments.size > 0 %> 
+                              <div class="comments" id="comment_wrapper">
+                                 
+                                    <div class="title"><h5><%= "#{t('comments')} #{@entry.comments.size}" %></h5></div>
+                                    
+                                    <ul class="comment-list">
+                                      <% @entry.comments.reverse.each do |comment| %>
+                                        <li class="comment">
+                                          <div class="comment-author"><%= link_to comment.name, comment.homepage, :unless => comment.homepage.blank? %></div>
+                                          <div class="cmeta"><%= l(comment.created_at) %></div>
+                                          <p><%= hbr comment.body %></p>
+                                          <div class="clearfix"></div>
+                                        </li>
+                                      <% end %>
+                                    </ul>
+                              </div>
+                              <% end %>
+                              
+                              <!-- Comment posting -->
+                              
+                              <div class="respond well">
+                                 <div class="title"><h5>コメント</h5></div>
+                                 
+                                 <div class="form">
+                                   <form class="form-horizontal" method="post" action="<%= request.path_info %>" accept-charset="UTF-8"><script type="text/javascript">
+  //<![CDATA[
+    document.write('<input type="hidden" name="check" value="check" />');
+  //]]
+</script>
+                                       <div class="control-group">
+                                         <label class="control-label" for="name">名前</label>
+                                         <div class="controls">
+                                           <input type="text" class="input-large" id="comment_name" name="comment[name]">
+                                         </div>
+                                       </div>
+                                       <div class="control-group">
+                                         <label class="control-label" for="website">URL</label>
+                                         <div class="controls">
+                                           <input type="text" class="input-large" id="comment_homepage" name="comment[homepage]">
+                                         </div>
+                                       </div>
+                                       <div class="control-group">
+                                         <label class="control-label" for="comment">本文</label>
+                                         <div class="controls">
+                                           <textarea class="input-xlarge" id="comment_body" name="comment[body]" rows="3"></textarea>
+                                         </div>
+                                       </div>
+                                       <div class="form-actions">
+                                         <button type="submit" class="btn">コメントする</button>
+                                       </div>
+                                   </form>
+                                 </div>
+                              </div>
+                              
+                              <!-- Navigation
+                              <div class="navigation button">  
+                                    <div class="pull-left"><a href="#">&laquo; Previous Post</a></div>
+                                    <div class="pull-right"><a href="#">Next Post &raquo;</a></div>
+                                    <div class="clearfix"></div>
+                              </div>
+                              -->
+
+                              <div class="clearfix"></div>
+                              
+                           </div>
+                        </div>                        
+                        <div class="span4">
+                           <div class="sidebar">
+                              <!-- Widget -->
+                              <div class="widget">
+                                 <h4>Search</h4>
+                                 <form method="get" id="searchform" action="#" class="form-search">
+                                    <input type="text" value="" name="s" id="s" class="input-medium"/>
+                                    <button type="submit" class="btn">Search</button>
+                                 </form>
+                              </div>
+                              <div class="widget">
+                                 <h4>Recent Posts</h4>
+                                 <ul>
+                                    <li><a href="#">Sed eu leo orci, condimentum gravida metus</a></li>
+                                    <li><a href="#">Etiam at nulla ipsum, in rhoncus purus</a></li>
+                                    <li><a href="#">Fusce vel magna faucibus felis dapibus facilisis</a></li>
+                                    <li><a href="#">Vivamus scelerisque dui in massa</a></li>
+                                    <li><a href="#">Pellentesque eget adipiscing dui semper</a></li>
+                                 </ul>
+                              </div>
+                              <div class="widget">
+                                 <h4>About</h4>
+                                 <p>Nulla facilisi. Sed justo dui, id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet. Quisque eu consectetur erat. Proin rutrum, erat eget posuere semper, <em>arcu mauris posuere tortor</em>,velit at <a href="#">magna sollicitudin cursus</a> ac ultrices magna. Aliquam consequat, purus vitae auctor ullamcorper, sem velit convallis quam, a pharetra justo nunc et mauris. </p>
+                              </div>                              
+                           </div>                                                
+                        </div>
+                     </div>
+                     
+                     
+                     
+                  </div>
+               </div>
+            </div>
+ 
+
+ <div class="border"></div>
+
+  </div>
+</div>

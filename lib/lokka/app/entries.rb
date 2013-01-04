@@ -1,5 +1,15 @@
 module Lokka
   class App
+    # home
+    get '/home' do
+      render_detect :home 
+    end
+
+    # profile
+    get '/profile' do
+      render_detect :profile
+    end
+
     # index
     get '/' do
       @theme_types << :index

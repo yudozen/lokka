@@ -1,0 +1,67 @@
+  <hr />
+
+  <!-- Blog starts -->
+            
+            <div class="blog">
+               <div class="row">
+                  <div class="span12">
+                     
+                     <!-- Blog Posts -->
+                     <div class="row">
+                        <div class="span8">
+                           <div class="posts">
+                           
+                              <!-- Each posts should be enclosed inside "entry" class" -->
+                              <% @posts.each do |post| %>
+                                <%= partial "article", :locals => {:entry => post} %> 
+                              <% end %>
+                              
+                              <!-- Pagination -->
+                              <div class="paging">
+                                 <span class='current'>1</span>
+                                 <a href='#'>2</a>
+                                 <span class="dots">&hellip;</span>
+                                 <a href='#'>6</a>
+                                 <a href="#">Next</a>
+                              </div> 
+                              
+                              <div class="clearfix"></div>
+                              
+                           </div>
+                        </div>                        
+                        <div class="span4">
+                           <div class="sidebar">
+                              <!-- Widget -->
+                              <div class="widget">
+                                 <h4>Search</h4>
+                                 <form method="get" id="searchform" action="#" class="form-search">
+                                    <input type="text" value="" name="s" id="s" class="input-medium"/>
+                                    <button type="submit" class="btn">Search</button>
+                                 </form>
+                              </div>
+                              <div class="widget">
+                                 <h4>Recent Posts</h4>
+                                 <ul>
+                                    <li><a href="#">Sed eu leo orci, condimentum gravida metus</a></li>
+                                    <li><a href="#">Etiam at nulla ipsum, in rhoncus purus</a></li>
+                                    <li><a href="#">Fusce vel magna faucibus felis dapibus facilisis</a></li>
+                                    <li><a href="#">Vivamus scelerisque dui in massa</a></li>
+                                    <li><a href="#">Pellentesque eget adipiscing dui semper</a></li>
+                                 </ul>
+                              </div>
+                              <div class="widget">
+                                 <h4>About</h4>
+                                 <p>Nulla facilisi. Sed justo dui, id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet. Quisque eu consectetur erat. Proin rutrum, erat eget posuere semper, <em>arcu mauris posuere tortor</em>,velit at <a href="#">magna sollicitudin cursus</a> ac ultrices magna. Aliquam consequat, purus vitae auctor ullamcorper, sem velit convallis quam, a pharetra justo nunc et mauris. </p>
+                              </div>                              
+                           </div>                                                
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+ 
+ <div class="border"></div>
+
+  </div>
+</div>
