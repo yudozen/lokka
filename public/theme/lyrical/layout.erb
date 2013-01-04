@@ -40,15 +40,7 @@
       <div class="span6">
         <div class="logo">
           <h1><a href="/">Lyrical <span class="color">Magical</span></a></h1>
-          <div class="hmeta">リリカルマジカル〜なのフェイ同盟〜</div>
-        </div>
-      </div>
-      <div class="span6">
-        <div class="form">
-          <form method="get" id="searchform" action="#" class="form-search">
-            <input type="text" value="" name="s" id="s" class="input-medium"/>
-            <button type="submit" class="btn">Search</button>
-          </form>
+          <div class="hmeta">〜 ウェブサービス開発日記 〜</div>
         </div>
       </div>
     </div>
@@ -65,7 +57,6 @@
                <div class="nav-collapse collapse">
                  <ul class="nav">
                    <li><a href="/home">Portfolio</a></li>
-                   <li><a href="/profile">Profile</a></li>
                    <li><a href="/">Blog</a></li>
                    <li><a href="https://github.com/yudozen">GitHub</a></li>
                  </ul>
@@ -88,7 +79,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <p class="big"><span>Follow Me On</span> <a href="#"><i class="icon-facebook"></i>Facebook</a> <a href="#"><i class="icon-twitter"></i>Twitter</a> <a href="#"><i class="icon-google-plus"></i>Google Plus</a> <a href="#"><i class="icon-linkedin"></i>LinkedIn</a></p>
+        <p class="big"><span>Follow Me On</span> <a href="http://www.facebook.com/yutaro.dozen"><i class="icon-facebook"></i>Facebook</a> <a href="#"><i class="icon-twitter"></i>Twitter</a> <a href="https://github.com/yudozen"><i class="icon-github"></i>GitHub</a></p>
       </div>
     </div>    
   </div>
@@ -103,39 +94,28 @@
       <div class="widgets">
         <div class="span4">
           <div class="fwidget">
-            <h5>Downlaods</h5>
+            <h5>サービス</h5>
             <ul>
-              <li><a href="#">Condimentum</a></li>
-              <li><a href="#">Etiam at</a></li>
-              <li><a href="#">Fusce vel</a></li>
-              <li><a href="#">Vivamus</a></li>
-              <li><a href="#">Pellentesque</a></li>
+              <li><a href="http://lyricalcall.com/?locale=ja">Lyrical Call</a></li>
+              <li><a href="http://lmail.jp">Lyrical Mail</a></li>
+              <li><a href="http://wow.curseforge.com/addons/arenadb">ArenaDB</a></li>
             </ul>
           </div>
         </div>
 
         <div class="span4">
           <div class="fwidget">
-            <h5>Support</h5>
-            <ul>
-              <li><a href="#">Condimentum</a></li>
-              <li><a href="#">Etiam at</a></li>
-              <li><a href="#">Fusce vel</a></li>
-              <li><a href="#">Vivamus</a></li>
-              <li><a href="#">Pellentesque</a></li>
-            </ul>
+            <h5>Twitter Feed</h5>
           </div>
         </div>
 
         <div class="span4">
           <div class="fwidget">
-            <h5>Recent Posts</h5>
+            <h5>最近のエントリー</h5>
             <ul>
-              <li><a href="#">Sed eu leo orci, condimentum gravida metus</a></li>
-              <li><a href="#">Etiam at nulla ipsum, in rhoncus purus</a></li>
-              <li><a href="#">Fusce vel magna faucibus felis dapibus facilisis</a></li>
-              <li><a href="#">Vivamus scelerisque dui in massa</a></li>
-              <li><a href="#">Pellentesque eget adipiscing dui semper</a></li>
+            <% Post.recent(5).each do |post| %>
+              <li><a href="<%= url(post.link) %>"><%= post.title %></a></li>
+            <% end %>
             </ul>
           </div>
         </div>
@@ -144,7 +124,7 @@
       <div class="span12">
           <div class="copy">
             <h5>Lyrical <span class="color">Magical</span></h5>
-            <p>Copyright &copy; <a href="#">2013 douzen.net</a> - <a href="#">Home</a> | <a href="#">Profile</a> | <a href="#">Disclaimer</a> | <a href="#">Disclaimer</a></p>
+            <p>Copyright &copy; 2013 douzen.net</p>
           </div>
       </div>
     </div>

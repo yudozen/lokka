@@ -4,7 +4,12 @@
 
  <!-- Meta details -->
  <div class="meta">
-    <i class="icon-calendar"></i> <%= entry.created_at.strftime("%Y/%m/%d %H:%M:%S") %> <i class="icon-user"></i> Admin <i class="icon-folder-open"></i> <a href="#">General</a> <span class="pull-right"><i class="icon-comment"></i> <a href="#"><%= link_to "#{t('comments')}(#{entry.comments.size})", url("#{entry.link}#comment_wrapper")%></a></span>
+    <i class="icon-calendar"></i><%= entry.created_at.strftime("%Y/%m/%d %H:%M:%S") %> 
+    <i class="icon-user"></i>Admin 
+    <i class="icon-tag"></i><%= entry.tags_to_html %>
+    <span class="pull-right">
+      <i class="icon-comment"></i><a href="#"><%= link_to "#{t('comments')}(#{entry.comments.size})", url("#{entry.link}#comment_wrapper")%></a>
+    </span>
  </div>
 
  <!-- Thumbnail

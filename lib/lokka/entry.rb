@@ -67,11 +67,11 @@ class Entry
   end
 
   def tags_to_html
-    html = '<ul class="tags">'
+    html = ''
     tags.each do |tag|
-      html += %Q(<li class="tag"><a href="#{tag.link}">#{tag.name}</a></li>)
+      html += %Q(<a href="#{tag.link}">#{tag.name}</a>&nbsp;)
     end
-    html + '</ul>'
+    html
   end
 
   # custom fields
