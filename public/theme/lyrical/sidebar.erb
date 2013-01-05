@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <!-- Widget -->
+  <div class="widget">
+    <form method="get" id="searchform" action="<%= url('/search/') %>" class="form-search">
+      <input type="text" value="" name="query" id="s" class="input-medium"/>
+      <button type="submit" class="btn">検索</button>
+    </form>
+  </div>
+  <div class="widget">
+    <h4>最近のエントリー</h4>
+    <ul>
+    <% Post.recent(5).each do |post| %>
+      <li><a href="<%= url(post.link) %>"><%= post.title %></a></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="widget">
+    <h4>タグ</h4>
+    <ul>
+      <% Tag.all.each do |tag| %>
+        <li><a href="<%= url(tag.link) %>"><%= tag.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="widget">
+    <h4>アーカイブ</h4>
+    <ul>
+    <% months.each do |month| %>
+      <li><a href="<%= url('/' + month.year + '/' + month.month + '/') %>"><%= month.year %>/<%= month.month %></a></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="widget">
+    <h4>その他</h4>
+    <ul>
+      <li><a href="<%= url('/index.atom') %>">Feed</a></li>
+    </ul>
+  </div>
+</div>

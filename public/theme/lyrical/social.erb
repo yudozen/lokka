@@ -1,0 +1,36 @@
+<table>
+  <tr>
+<!-- Hatebu -->
+    <td style="padding:5px 5px">
+<a href="http://b.hatena.ne.jp/entry/<%= url(entry.link) %>" 
+  class="hatena-bookmark-button" 
+  data-hatena-bookmark-title="<%= entry.title %>"
+  data-hatena-bookmark-layout="vertical-balloon" 
+  title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt=">このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </td>
+<!-- Tweet -->
+    <td style="padding:0px 5px 2px 5px">
+<a href="https://twitter.com/share" 
+  class="twitter-share-button"
+  data-url="<%= url(entry.link) %>"
+  data-text="<%= entry.title %>"
+  data-via=""
+  data-count="vertical"
+  data-lang="ja">Tweet</a>
+    </td>
+<!-- Facebook iine -->
+    <td style="padding:0px 5px 4px 5px">
+<div class="fb-like" 
+  data-href="<%= url(entry.link) %>"
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="450" 
+  data-show-faces="true"></div>
+    </td>
+<!-- Google +1 -->
+    <td style="padding:0px 5px 0px 5px">
+<div class="g-plusone" data-href="<%= entry.link %>" data-size="tall"></div>
+
+    </td>
+  </tr>
+</table>
