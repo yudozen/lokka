@@ -683,7 +683,7 @@ min-width: 180px;
 margin-bottom:25px;
 padding-bottom:15px;
 border-bottom:1px solid #eee;
-font-size: 13px;
+font-size: 14px;
 line-height: 25px;
 }
 
@@ -1253,4 +1253,8 @@ footer .copy{
 
 @media (max-width: 979px){
 
+}
+
+#thread-votes {
+	display: none;
 }

@@ -3,12 +3,20 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>Lyrical Magical</title>
+<% if entry? %>
+    <title><%= @entry.title %> - <%= @site.title %></title>
+<% else %>
+    <title><%= @site.title %></title>
+<% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
-
+  <meta name="description" content="<%= @site.meta_description %>">
+  <meta name="keywords" content="<%= @site.meta_keywords %>">
+  <meta content="<%= @site.title %>" property="og:title">
+  <meta content="blog" property="og:type">
+  <meta content="個人で制作しているウェブサービスの紹介や、開発の過程で使用した技術について書いています。" property="og:description">
+  <meta content="<%= @site.title %>" property="og:site_name">    <meta content="https://lh4.googleusercontent.com/-ApkvG50Hyxs/UOkZADTK01I/AAAAAAAAABM/GmriqB12CsM/s288/396068_334405819977748_999117010_n.jpg" property="og:image">
+  <meta content="http://douzen.net/" property="og:url">
+  <meta content="100002249981084" property="fb:admins">
 
   <!-- Stylesheets -->
   <link href="<%= @theme.path %>/style/bootstrap.css" rel="stylesheet">
@@ -29,6 +37,20 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="<%= @theme.path %>/img/favicon/favicon.png">
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37434562-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 
 <body>
@@ -79,7 +101,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <p class="big"><span>Follow Me On</span> <a href="http://www.facebook.com/yutaro.dozen"><i class="icon-facebook"></i>Facebook</a> <a href="#"><i class="icon-twitter"></i>Twitter</a> <a href="https://github.com/yudozen"><i class="icon-github"></i>GitHub</a></p>
+        <p class="big"><span>Follow Me On</span> <a href="http://www.facebook.com/yutaro.dozen"><i class="icon-facebook"></i>Facebook</a> <a href="http://twitter.com/yudozen"><i class="icon-twitter"></i>Twitter</a> <a href="https://github.com/yudozen"><i class="icon-github"></i>GitHub</a></p>
       </div>
     </div>    
   </div>
@@ -94,7 +116,7 @@
       <div class="widgets">
         <div class="span4">
           <div class="fwidget">
-            <h5>サービス</h5>
+            <h5>リンク</h5>
             <ul>
               <li><a href="http://lyricalcall.com/?locale=ja">Lyrical Call</a></li>
               <li><a href="http://lmail.jp">Lyrical Mail</a></li>
@@ -106,6 +128,9 @@
         <div class="span4">
           <div class="fwidget">
             <h5>Twitter Feed</h5>
+<a class="twitter-timeline" href="https://twitter.com/yudozen" data-widget-id="287839577815793664">@yudozen からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
           </div>
         </div>
 
@@ -133,15 +158,30 @@
 </footer>		
 
 <!-- JS -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.isotope.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/jquery.cslider.js"></script>
-<script src="js/modernizr.custom.28468.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/custom.js"></script>
+<script src="<%= @theme.path %>/js/jquery.js"></script>
+<script src="<%= @theme.path %>/js/bootstrap.js"></script>
+<script src="<%= @theme.path %>/js/jquery.isotope.js"></script>
+<script src="<%= @theme.path %>/js/jquery.prettyPhoto.js"></script>
+<script src="<%= @theme.path %>/js/jquery.cslider.js"></script>
+<script src="<%= @theme.path %>/js/modernizr.custom.28468.js"></script>
+<script src="<%= @theme.path %>/js/filter.js"></script>
+<script src="<%= @theme.path %>/js/cycle.js"></script>
+<script src="<%= @theme.path %>/js/custom.js"></script>
+
+<!-- hatena star -->
+<script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript">
+Hatena.Star.Token = 'a6f3a4da808f52c47d1ede7dcccf94a5506bc7ed';
+Hatena.Star.SiteConfig = {
+  entryNodes: {
+    'div.entry': {
+      uri: 'h2 a',
+      title: 'h2',
+      container: 'span.hatena-star-container'
+    }
+  }
+};
+</script>
 
 <!-- Social Button start -->
 <!-- Hatebu -->

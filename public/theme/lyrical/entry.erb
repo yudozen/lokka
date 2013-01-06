@@ -13,7 +13,7 @@
                               <!-- Each posts should be enclosed inside "entry" class" -->
                               <!-- Post one -->
                               <div class="entry">
-                                 <h2><%= @entry.title %></h2>
+                                 <h2><a href="<%= url(@entry.link) %>"><%= @entry.title %></a> <span class="hatena-star-container"></span></h2>
                                  
                                  <!-- Meta details -->
                                  <div class="meta">
