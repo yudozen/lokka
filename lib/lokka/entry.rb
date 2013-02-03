@@ -6,6 +6,7 @@ class Entry
   property :user_id, Integer
   property :category_id, Integer
   property :slug, Slug, :length => 255
+  property :og_image, String, :length => 2048
   property :title, String, :length => 255
   property :body, Text
   property :markup, String, :length => 255

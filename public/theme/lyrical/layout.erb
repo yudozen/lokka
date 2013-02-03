@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-<% if entry? %>
-    <title><%= @entry.title %> - <%= @site.title %></title>
-<% else %>
-    <title><%= @site.title %></title>
-<% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<%= @site.meta_description %>">
   <meta name="keywords" content="<%= @site.meta_keywords %>">
-  <meta content="<%= @site.title %>" property="og:title">
-  <meta content="blog" property="og:type">
-  <meta content="個人で制作しているウェブサービスの紹介や、開発の過程で使用した技術について書いています。" property="og:description">
-  <meta content="<%= @site.title %>" property="og:site_name">    <meta content="https://lh4.googleusercontent.com/-ApkvG50Hyxs/UOkZADTK01I/AAAAAAAAABM/GmriqB12CsM/s288/396068_334405819977748_999117010_n.jpg" property="og:image">
-  <meta content="http://douzen.net/" property="og:url">
-  <meta content="100002249981084" property="fb:admins">
+  <meta charset="utf-8">
+  <meta property="fb:admins" content="100002249981084">
+  <meta property="og:title" content="<%= @site.title %>">
+  <meta property="og:type" content="blog">
+<% if entry? %>
+  <meta property="og:url" content="<%= url(@entry.link) %>">
+  <meta property="og:description" content="<%= @entry.title %>" />
+  <meta property="og:image" content="<%= @entry.og_image %>" />
+  <title><%= @entry.title %> - <%= @site.title %></title>
+<% else %>
+  <meta property="og:url" content="http://douzen.net/">
+  <meta content="個人で制作しているウェブサービスの紹介や、開発の過程で使用した技術について書いています。" property="og:description" />
+  <title><%= @site.title %></title>
+<% end %>
 
   <!-- Stylesheets -->
   <link href="<%= @theme.path %>/style/bootstrap.css" rel="stylesheet">
@@ -116,7 +118,7 @@
       <div class="widgets">
         <div class="span4">
           <div class="fwidget">
-            <h5>リンク</h5>
+            <h5>作ったサービス</h5>
             <ul>
               <li><a href="http://lyricalcall.com/?locale=ja">Lyrical Call</a></li>
               <li><a href="http://lmail.jp">Lyrical Mail</a></li>

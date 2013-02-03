@@ -23,6 +23,10 @@
     %br/
     = f.text_field :slug
   .field
+    = f.label :og_image, :caption => t("#{@name}.og_image")
+    %br/
+    = f.text_field :og_image
+  .field
     = f.label :category, :caption => t("#{@name}.category")
     %br/
     - if Category.count > 0
