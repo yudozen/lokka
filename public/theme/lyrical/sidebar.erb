@@ -9,7 +9,7 @@
   <div class="widget">
     <h4>最近のエントリー</h4>
     <ul>
-    <% Post.recent(5).each do |post| %>
+    <% Post.recent(10).each do |post| %>
       <li><a href="<%= url(post.link) %>"><%= post.title %></a></li>
     <% end %>
     </ul>
